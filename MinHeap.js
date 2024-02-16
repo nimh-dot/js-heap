@@ -7,7 +7,7 @@
 
 // The helper methods like rightChild, leftChild, parent  help us to get the element and its children at the specified index.
 
-class MaxHeap {
+class MinHeap {
     constructor() {
         this.heap = [];
     }
