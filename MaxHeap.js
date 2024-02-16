@@ -7,7 +7,7 @@
 
 // The helper methods like rightChild, leftChild, parent  help us to get the element and its children at the specified index.
 
-class Heap {
+class MaxHeap {
     constructor() {
         this.heap = [];
     }
@@ -52,9 +52,11 @@ class Heap {
 
     heapifyUp() {
         let i = this.heap.length - 1;
-        while (this.getParentIndex(i) >= 0 && this.heap[i] > this.heap[this.getParentIndex(i)]) {
-            this.swap(i, this.getParentIndex(i));
-            i = this.getParentIndex(i);
+        let parentIndex = this.getParentIndex(i);
+        while (i > 0 && this.heap[i] > this.heap[parentIndex]) {
+            this.swap(i, parentIndex);
+            i = parentIndex;
+            parentIndex = this.getParentIndex(parentIndex);
         }
     }
 
